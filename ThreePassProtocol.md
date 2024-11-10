@@ -11,7 +11,7 @@ Alice and Bob want to exchange a message securely. Using Shamir's Three-Pass Pro
 
 Parameters given:
 - **Prime \( p \)** = 91246234312872996521
-- **Modular product \( (a \cdot b) \) mod (p-1) ** = 52989123124449843069
+- **Modular product \( (a \cdot b) \) mod (p-1)** = 52989123124449843069
 
 ### Goal
 Determine the original message \( m \) that Alice sent to Bob, using modular inverses and the known values.
