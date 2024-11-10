@@ -45,3 +45,7 @@ inverse_ab = mod_inverse(ab_mod, p-1)
 # Determine the original message 'm'
 m = pow(msg_part3, inverse_ab, p)
 print("The original message, m:", m)
+
+
+### Output
+The original message, m: 67199345027544938973
