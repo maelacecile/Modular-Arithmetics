@@ -11,7 +11,7 @@ Alice and Bob want to exchange a message securely. Using Shamir's Three-Pass Pro
 
 Parameters given:
 - **Prime \( p \)** = 91246234312872996521
-- **Modular product \( (a \cdot b) \) mod (p-1)** = 52989123124449843069
+- **Modular product \( (a.b) \) mod (p-1)** = 52989123124449843069
 
 ### Goal
 Determine the original message \( m \) that Alice sent to Bob, using modular inverses and the known values.
@@ -25,7 +25,7 @@ Determine the original message \( m \) that Alice sent to Bob, using modular inv
    - Finally, Alice responds by sending \( (m^{ab})^{a^{-1}} \mod p = m^b \mod p \) back to Bob.
 
 ### Step 2: Use Modular Inverses
-   - Since we know the product \( a \cdot b \mod (p-1) \), we can calculate the modular inverse of \( a \) and \( b \) to find \( m \) by working backward.
+   - Since we know the product \( a.b \mod (p-1) \), we can calculate the modular inverse of \( a \) and \( b \) to find \( m \) by working backward.
    - Compute the modular inverse of \( a \) with respect to \( p-1 \), then apply it to retrieve \( m \).
 
 ### Step 3: Python Code
