@@ -59,3 +59,15 @@ a_part_b = [211, 3304, 6614]
 n_part_b = [2438, 4247, 7123]
 x_part_b = crt(a_part_b, n_part_b)
 print("Solution for Part (b), x:", x_part_b)
+
+```
+
+### Output
+```python
+# Output for Chinese Remainder Theorem
+
+# Part (a)
+x = 3464609
+
+# Part (b)
+x = 12345654321
