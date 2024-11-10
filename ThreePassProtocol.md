@@ -1,70 +1,47 @@
-ThreePassProtocol
-Three-Pass Protocol Solution
-Problem Statement
-Alice and Bob use Shamir's Three-Pass Protocol to securely exchange a message without sharing keys directly. Given a series of messages exchanged and certain parameters, our task is to determine the secret message sent by Alice to Bob.
+# Three-Pass Protocol Solution
 
-Parameters and Observed Messages
-Prime (p): 
-𝑝
-=
-91246234312872996521
-p=91246234312872996521
-Messages Observed:
-𝐴
-→
-𝐵
-:
-28815377349986238948
-A→B:28815377349986238948
-𝐵
-→
-𝐴
-:
-32022638409929718780
-B→A:32022638409929718780
-𝐴
-→
-𝐵
-:
-14438564975518228697
-A→B:14438564975518228697
-Additional Information:
-We have 
-(
-𝑎
-⋅
-𝑏
-)
-m
-o
-d
- 
- 
-(
-𝑝
-−
-1
-)
-=
-52989123124449843069
-(a⋅b)mod(p−1)=52989123124449843069
-The goal is to use this information to reconstruct the original message 
-𝑚
-m that Alice sent.
+## Overview
+This file documents the solution to a problem involving Shamir's Three-Pass Protocol, a public-key message exchange system. In this protocol, Alice and Bob use modular arithmetic to securely exchange a message without needing a shared secret key. The protocol relies on Fermat’s Little Theorem and modular inverses.
 
-Approach
-Using modular arithmetic and the given values:
+## Problem Statement
+Alice and Bob want to exchange a message securely. Using Shamir's Three-Pass Protocol, they send the following sequence of messages:
+- **A->B:** 28815377349986238948
+- **B->A:** 32022638409929718780
+- **A->B:** 14438564975518228697
 
-We calculate the modular inverse of 
-𝑎
-a and 
-𝑏
-b modulo 
-𝑝
-−
-1
-p−1.
-Using the Three-Pass Protocol, we can solve for 
-𝑚
-m by isolating the terms in the message exchanges.
-Code
+Parameters given:
+- **Prime \( p \)** = 91246234312872996521
+- **Modular product \( (a \cdot b) \) mod (p-1) ** = 52989123124449843069
+
+### Goal
+Determine the original message \( m \) that Alice sent to Bob, using modular inverses and the known values.
+
+## Solution Steps
+
+### Step 1: Setup Algebraic Expressions
+   - Let \( m \) represent Alice’s original message.
+   - Alice first sends \( m^a \mod p \) to Bob.
+   - Bob then responds with \( (m^a)^b \mod p = m^{ab} \mod p \).
+   - Finally, Alice responds by sending \( (m^{ab})^{a^{-1}} \mod p = m^b \mod p \) back to Bob.
+
+### Step 2: Use Modular Inverses
+   - Since we know the product \( a \cdot b \mod (p-1) \), we can calculate the modular inverse of \( a \) and \( b \) to find \( m \) by working backward.
+   - Compute the modular inverse of \( a \) with respect to \( p-1 \), then apply it to retrieve \( m \).
+
+### Step 3: Python Code
+The code below demonstrates how to find \( m \) given the values from the problem.
+
+```python
+from sympy import mod_inverse
+
+# Given values
+p = 91246234312872996521
+ab_mod = 52989123124449843069
+msg_part3 = 14438564975518228697  # Alice's final response to Bob
+
+# Calculate the inverse of (a * b) mod (p-1)
+inverse_ab = mod_inverse(ab_mod, p-1)
+
+# Determine the original message 'm'
+m = pow(msg_part3, inverse_ab, p)
+print("The original message, m:", m)
