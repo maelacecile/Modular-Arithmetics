@@ -7,15 +7,16 @@ This document presents a solution to a modular arithmetic problem using the Chin
 We are given two parts in this exercise:
 
 1. **Part (a):** Find \( x \) such that:
-   - \( x \equiv 211 \ (\text{mod} \ 2438) \)
-   - \( x \equiv 3304 \ (\text{mod} \ 4247) \)
+   -  x≡211 (mod 2438)
+   -  x≡3304 (mod 4247)
 
    The solution \( x \) should be between 0 and \( 2438 \times 4247 \).
 
 2. **Part (b):** Find \( x \) such that:
-   - \( x \equiv 211 \ (\text{mod} \ 2438) \)
-   - \( x \equiv 3304 \ (\text{mod} \ 4247) \)
-   - \( x \equiv 6614 \ (\text{mod} \ 7123) \)
+  -  x≡211 (mod 2438)
+  -  x≡3304 (mod 4247)
+  -  x≡6614 (mod 7123)
+
 
    The solution \( x \) should be between 0 and \( 2438 \times 4247 \times 7123 \).
 
