@@ -61,3 +61,19 @@ print("Encrypted message, c:", c)
 # Step 4: Decrypt the message
 decrypted_m = pow(c, d, n)
 print("Decrypted message, m:", decrypted_m)
+```
+
+### Output
+```python
+# Output for RSA Encryption and Decryption
+
+# Values Calculated:
+n = 4848807859982422520055363619087557256788012890051
+phi(n) = 4848807859982422520055354343231813892832955870704
+Private Key (d) = 4019352973151122050513865145649198491570306248865
+
+# Encrypted Message (c)
+c = 220922577707289073220281121173254002900191972769
+
+# Decrypted Message (m)
+m = 122333221
