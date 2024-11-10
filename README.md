@@ -6,4 +6,4 @@ This project contains solutions for modular arithmetic problems, including:
 - The Chinese Remainder Theorem (CRT)
 - RSA encryption and decryption
 
-Each section contains code examples, explanations, and screenshots of the process.
+Each section contains code examples, explanations, and outputs of the process.
