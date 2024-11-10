@@ -46,6 +46,9 @@ inverse_ab = mod_inverse(ab_mod, p-1)
 m = pow(msg_part3, inverse_ab, p)
 print("The original message, m:", m)
 
+```
 
 ### Output
+```python
+#The Output for Three-Pass Protocol
 The original message, m: 67199345027544938973
